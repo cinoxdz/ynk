@@ -6,7 +6,6 @@ body {
 
 /* General Section Styles */
 .section {
-    position: absolute;
     width: 100%;
     box-sizing: border-box;
     color: white;
@@ -21,6 +20,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: fixed; /* 🔥 يجعل الخلفية ثابتة عند الصعود */
+    width: 100%;
+    z-index: -1; /* 🔥 يجعلها تحت باقي العناصر */
 }
 
 #section1 h1 {
@@ -33,15 +35,17 @@ body {
     margin-top: 10px;
 }
 
-/* Second Section (Two Parts: Black and Dim Black) */
+/* Second Section (Black and Dim Black Parts) */
 #section2 {
-    transform: translateY(100%);
+    position: relative;
+    top: 100vh; /* 🔥 يبدأ بعد القسم الأول */
+    height: 150vh; /* إجمالي ارتفاع القسمين */
+    background: black;
     transition: transform 1.2s ease-in-out;
-    height: 150vh; /* Combined height of both parts */
 }
 
 #section2.active {
-    transform: translateY(0);
+    transform: translateY(-100vh); /* 🔥 يتحرك للأعلى عند التفعيل */
 }
 
 /* First Part of Section 2 (Black Background) */
@@ -88,61 +92,12 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    position: relative;
 }
 
 #section2 .part2 h2 {
     font-size: 1.5em;
     margin: 0;
     margin-right: 280px;
-}
-
-#section2 .part2 .additional-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-right: 20px;
-    position: absolute;
-    bottom: 110px;
-    right: 290px;
-}
-
-#section2 .part2 .additional-text p {
-    margin: 5px 0;
-    font-size: 1em;
-}
-
-#section2 .part2 .logo-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: absolute;
-    top: 173px;
-    right: 1220px;
-}
-
-#section2 .part2 .logo-text h3 {
-    margin: 5px 0;
-    font-size: 1.5em;
-}
-
-#section2 .part2 .logo-text p {
-    margin: 5px 0;
-    font-size: 0.9em;
-}
-
-#section2 .part2 .logo {
-    cursor: pointer;
-    position: absolute;
-    top: 235px;
-    left: 140px;
-}
-
-#section2 .part2 .logo img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* تحسين عرض الهواتف */
@@ -160,7 +115,6 @@ body {
         font-size: 1em;
     }
 
-    /* تعديلات على القسم الثاني - الجزء الأول */
     #section2 .part1 {
         flex-direction: column;
         padding: 20px;
@@ -182,37 +136,18 @@ body {
         margin-right: 0;
     }
 
-    /* تعديلات على القسم الثاني - الجزء الثاني */
     #section2 .part2 {
         flex-direction: column;
         padding: 20px;
         text-align: center;
         height: auto;
     }
-
-    #section2 .part2 h2 {
-        margin-right: 0;
-        font-size: 1.5em;
-    }
-
-    #section2 .part2 .additional-text,
-    #section2 .part2 .logo-text,
-    #section2 .part2 .logo {
-        position: static;
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    #section2 .part2 .logo img {
-        width: 50px;
-        height: 50px;
-    }
 }
 
 /* دعم العرض في شاشات الكمبيوتر */
 @media (min-width: 769px) {
     #section2 .part1 {
-        flex-direction: row; /* الصورة تبقى على الجانب في الكمبيوتر */
+        flex-direction: row;
         align-items: center;
         justify-content: space-between;
     }
