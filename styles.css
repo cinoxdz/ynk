@@ -1,204 +1,137 @@
-body {
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-
-/* General Section Styles */
-.section {
-    width: 100%;
+    padding: 0;
     box-sizing: border-box;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* First Section (Background Image) */
-#section1 {
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Fixed Background Container */
+.fixed-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100vh;
     background: url('https://raw.githubusercontent.com/cinoxdz/main/main/images/background.jpg') no-repeat center center/cover;
-    background-size: cover;
+    z-index: -1;
+}
+
+/* Overlay Text */
+.overlay-text {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
     width: 100%;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.small-text {
+    font-size: 1rem;
+    margin-top: 10px;
+    animation: fadeInUp 1.8s ease-out forwards;
+}
+
+/* Content Section */
+.content {
+    position: relative;
     z-index: 1;
+    padding: 50px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: opacity 1s ease-in-out;
+    flex-direction: column;
+    margin-top: 100vh;
 }
 
-#section1 h1 {
-    font-size: 3em;
-    margin: 0;
-}
-
-#section1 p {
-    font-size: 1.5em;
-    margin-top: 10px;
-}
-
-/* إخفاء الخلفية عند الصعود */
-#section2.active ~ #section1 {
-    opacity: 0;
-}
-
-/* Second Section */
-#section2 {
-    position: relative;
-    top: 100vh;
-    height: 150vh;
-    background: black;
-    transition: transform 1.2s ease-in-out;
-    z-index: 2;
-}
-
-#section2.active {
-    transform: translateY(-100vh);
-}
-
-/* First Part of Section 2 */
-#section2 .part1 {
-    height: 100vh;
-    background-color: black;
+.image-text-section {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 200px;
+    gap: 30px;
 }
 
-#section2 .part1 img {
-    max-width: 400px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+.text-container {
+    text-align: left;
+    white-space: nowrap;
 }
 
-#section2 .part1 .text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-right: 150px;
-}
-
-#section2 .part1 h1 {
-    font-size: 2em;
-    margin: 0;
+.text {
+    font-size: 3rem;
     font-weight: bold;
     color: white;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 5px;
+    animation: fadeInUp 1.5s ease-out forwards;
 }
 
-#section2 .part1 p {
-    font-size: 1.2em;
-    margin-top: 10px;
-    line-height: 1.5;
-    color: white;
+.image {
+    width: 400px;
+    height: auto;
+    border-radius: 15px;
+    animation: fadeInUp 1.5s ease-out forwards;
 }
 
-/* Second Part of Section 2 */
-#section2 .part2 {
-    height: 50vh;
+/* Footer */
+.footer-wrapper {
     background-color: #111;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 20px;
-    position: relative;
-}
-
-#section2 .part2 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* عمودين */
-    grid-template-rows: auto auto; /* صفوف تلقائية */
-    gap: 10px; /* المسافة بين العناصر */
     width: 100%;
-    max-width: 600px; /* تحديد عرض الشبكة */
+    padding: 20px 0;
 }
 
-#section2 .part2 .omg {
-    grid-column: 1 / 2; /* OMG في العمود الأول */
-    grid-row: 1 / 2; /* OMG في الصف الأول */
-    font-size: 1.5em;
-    margin: 0;
-    color: white;
-    text-align: left; /* محاذاة لليسار */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
 }
 
-#section2 .part2 .connect {
-    grid-column: 2 / 3; /* CONNECT في العمود الثاني */
-    grid-row: 1 / 2; /* CONNECT في الصف الأول */
-    font-size: 1.5em;
-    margin: 0;
-    color: white;
-    text-align: right; /* محاذاة لليمين */
+.footer-section {
+    animation: fadeInUp 1.5s ease-out forwards;
+    flex: 1;
 }
 
-#section2 .part2 .vq1 {
-    grid-column: 2 / 3; /* vq_1 في العمود الثاني */
-    grid-row: 2 / 3; /* vq_1 في الصف الثاني */
-    font-size: 1.2em;
-    margin: 0;
-    color: white;
-    text-align: right; /* محاذاة لليمين */
+.footer-section h2, .footer-section p {
+    margin: 5px 0;
 }
 
-#section2 .part2 .email {
-    grid-column: 2 / 3; /* otis@otis.team في العمود الثاني */
-    grid-row: 3 / 4; /* otis@otis.team في الصف الثالث */
-    font-size: 1.2em;
-    margin: 0;
-    color: white;
-    text-align: right; /* محاذاة لليمين */
-}
-
-#section2 .part2 .logo {
+.discord-button {
+    background: none;
+    border: none;
     cursor: pointer;
-    margin-top: 20px;
+    padding: 0;
 }
 
-#section2 .part2 .logo img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+.discord-icon {
+    width: 32px;
+    height: 32px;
 }
 
-/* تحسين عرض الهواتف */
-@media (max-width: 768px) {
-    #section2 .part1 {
-        flex-direction: column;
-        padding: 20px;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-    }
+.footer-bottom {
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out forwards;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
 
-    #section2 .part1 img {
-        max-width: 90%;
-        height: auto;
-        margin-bottom: 20px;
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
     }
-
-    #section2 .part1 .text {
-        align-items: center;
-        margin-right: 0;
-    }
-
-    #section2 .part2 {
-        flex-direction: column;
-        padding: 20px;
-        text-align: center;
-        height: auto;
-    }
-
-    #section2 .part2 h2 {
-        margin-right: 0;
-        font-size: 1.5em;
-    }
-
-    #section2 .part2 .logo img {
-        width: 50px;
-        height: 50px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
