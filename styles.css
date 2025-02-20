@@ -17,15 +17,10 @@ body {
 #section1 {
     height: 100vh;
     background: url('https://raw.githubusercontent.com/cinoxdz/main/main/images/background.jpg') no-repeat center center/cover;
-    background-size: cover;
-    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
-    padding: 20px;
-    text-align: center;
 }
 
 #section1 h1 {
@@ -42,8 +37,6 @@ body {
 #section2 {
     transform: translateY(100%);
     transition: transform 1.2s ease-in-out;
-    position: absolute;
-    width: 100%;
     height: 150vh; /* Combined height of both parts */
 }
 
@@ -79,14 +72,12 @@ body {
     font-size: 2em;
     margin: 0;
     font-weight: bold;
-    color: white;
 }
 
 #section2 .part1 p {
     font-size: 1.2em;
     margin-top: 10px;
     line-height: 1.5;
-    color: white;
 }
 
 /* Second Part of Section 2 (Dim Black Background Below Black) */
@@ -103,7 +94,7 @@ body {
 #section2 .part2 h2 {
     font-size: 1.5em;
     margin: 0;
-    color: white;
+    margin-right: 280px;
 }
 
 #section2 .part2 .additional-text {
@@ -119,7 +110,6 @@ body {
 #section2 .part2 .additional-text p {
     margin: 5px 0;
     font-size: 1em;
-    color: white;
 }
 
 #section2 .part2 .logo-text {
@@ -134,13 +124,11 @@ body {
 #section2 .part2 .logo-text h3 {
     margin: 5px 0;
     font-size: 1.5em;
-    color: white;
 }
 
 #section2 .part2 .logo-text p {
     margin: 5px 0;
     font-size: 0.9em;
-    color: white;
 }
 
 #section2 .part2 .logo {
@@ -159,26 +147,42 @@ body {
 
 /* تحسين عرض الهواتف */
 @media (max-width: 768px) {
+    #section1 {
+        padding: 20px;
+        text-align: center;
+    }
+
+    #section1 h1 {
+        font-size: 2em;
+    }
+
+    #section1 p {
+        font-size: 1em;
+    }
+
+    /* تعديلات على القسم الثاني - الجزء الأول */
     #section2 .part1 {
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
         justify-content: center;
         align-items: center;
-        padding: 20px;
     }
 
     #section2 .part1 img {
-        max-width: 45%;
+        max-width: 70%;
         height: auto;
-        border-radius: 10px;
+        margin-bottom: 20px;
     }
 
     #section2 .part1 .text {
-        max-width: 50%;
-        text-align: left;
-        margin-left: 10px;
+        max-width: 90%;
+        text-align: center;
+        align-items: center;
+        margin-right: 0;
     }
 
+    /* تعديلات على القسم الثاني - الجزء الثاني */
     #section2 .part2 {
         flex-direction: column;
         padding: 20px;
@@ -202,5 +206,14 @@ body {
     #section2 .part2 .logo img {
         width: 50px;
         height: 50px;
+    }
+}
+
+/* دعم العرض في شاشات الكمبيوتر */
+@media (min-width: 769px) {
+    #section2 .part1 {
+        flex-direction: row; /* الصورة تبقى على الجانب في الكمبيوتر */
+        align-items: center;
+        justify-content: space-between;
     }
 }
