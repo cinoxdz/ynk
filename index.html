@@ -1,228 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Otis</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        .fixed-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: url('https://cdn.discordapp.com/attachments/1341426971372028014/1341429454572093501/f49cc3d702c6a3c29c39f1e849c8b2a9.jpg?ex=67b5f708&is=67b4a588&hm=561610350108aacfbece8906106923a8c29b952001e45d2049cce2ad61f91765&') no-repeat center center/cover;
-            z-index: -1;
-        }
-        .content {
-            position: relative;
-            z-index: 1;
-            padding: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            margin-top: 100vh; 
-        }
-.content {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    height: 80; 
-    background-color: black; 
-}
-
-.image-text-section {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.text-container {
-    text-align: left; 
-    white-space: nowrap; 
-}
-
-.text {
-    font-size: 16rem; 
-    font-weight: bold;
-    color: white;
-    font-family: "Poppins", sans-serif;
-    margin-bottom: 5px;
-}
-
-.small-text {
-    font-size: 2rem; 
-    color: #ccc;
-    font-family: "Poppins", sans-serif;
-}
-
-.image {
-    width: 400px; 
-    height: auto;
-    border-radius: 15px; 
-    animation: fadeInUp 1.5s ease-out forwards;
-}
-
-
-
-
-        .overlay-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3rem;
-            font-weight: bold;
-            width: 100%;
-        }
-        .small-text {
-            font-size: 1rem;
-            margin-top: 10px;
-        }
-        .image-text-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 80%;
-            margin: 50px auto;
-            text-align: left;
-        }
-        .image-text-section img {
-            max-width: 40%;
-            height: auto;
-            margin-left: auto;
-        }
-        .image-text-section .text {
-            max-width: 50%;
-            font-size: 1.5rem;
-            margin-right: auto;
-        }
-.footer-wrapper {
-    background-color: #111; 
-    width: 100%; 
-    padding: 20px 0; 
-}
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 60%;
-    margin: 0 auto; 
-}
-
-.footer-section {
-    animation: fadeInUp 1.5s ease-out forwards;
-    flex: 1;
-}
-
-.footer-section h2, .footer-section p {
-    margin: 5px 0;
-}
-
-.discord-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-.discord-icon {
-    width: 32px;
-    height: 32px;
-}
-
-.footer-bottom {
-    text-align: center;
-    animation: fadeInUp 1.5s ease-out forwards;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-      @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.text, .small-text {
-    animation: fadeInUp 1.5s ease-out forwards;
-    opacity: 0; 
-}
-
-
-
-        </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/cinoxdz/main/main/images/my-photo.jpg" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <!-- Fixed Background Container -->
     <div class="fixed-container"></div>
 
-    <div class="overlay-text">Otis
+    <!-- Overlay Text -->
+    <div class="overlay-text">
+        Otis
         <div class="small-text">(Made with love by Otis)</div>
     </div>
 
+    <!-- Content Section -->
     <div class="content">
-    <div class="image-text-section">
-        <div class="text-container">
-            <div class="text" style="font-size: 3rem !important;">Fine Shyts</div>
-            <div class="small-text">Wanna be my fine shyt?</div>
+        <div class="image-text-section">
+            <div class="text-container">
+                <div class="text">Fine Shyts</div>
+                <div class="small-text">Wanna be my fine shyt?</div>
+            </div>
+            <img class="image" src="https://raw.githubusercontent.com/cinoxdz/main/main/images/discord-log" alt="Scrolling Image">
         </div>
-        <img class="image" src="https://media.discordapp.net/attachments/1341426971372028014/1341429454219640913/8cf40abd776e8293e45a43a64f698803.jpg?ex=67b5f708&is=67b4a588&hm=886b5cf803dab23901b095afdc6398a4216ec98843f46fbbfefd44890dc80c9d&" alt="Scrolling Image">
     </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script>
-    gsap.from(".overlay-text, .text", { 
-        opacity: 0, 
-        y: 50, 
-        duration: 1.5, 
-        ease: "power3.out" 
-    });
 
-    gsap.from(".small-text", { 
-        opacity: 0, 
-        y: 50, 
-        duration: 1.8, 
-        delay: 0.5, 
-        ease: "power3.out" 
-    });
-</script>
+    <!-- Footer -->
+    <div class="footer-wrapper">
+        <footer class="footer">
+            <div class="footer-section">
+                <h2>OMG</h2>
+                <p>Pew</p>
+                <button onclick="window.open('https://discord.com/users/1052972231560548432/', '_blank')">
+                    <i class="fa-brands fa-discord"></i>
+                </button>
+            </div>
+            <div class="footer-section">
+                <h2>CONNECT</h2>
+                <p>vq_t</p>
+                <p>otis@otis.team</p>
+            </div>
+        </footer>
+        <p class="footer-bottom">Otis Â© 2025. All rights reserved.</p>
+    </div>
 
-
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-<div class="footer-wrapper">
-    <footer class="footer">
-        <div class="footer-section">
-            <h2>OMG</h2>
-            <p>Pew</p>
-            <button onclick="document.location='https://discord.com/users/1052972231560548432/'"><i class="fa-brands fa-discord"></i></button>
-        </div>
-        <div class="footer-section">
-            <h2>CONNECT</h2>
-            <p>vq_t</p>
-            <p>otis@otis.team</p>
-        </div>
-    </footer>
-    <p class="footer-bottom">Otis Â© 2025. All rights reserved.</p>
-</div>
