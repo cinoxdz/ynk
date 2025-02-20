@@ -154,12 +154,23 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* تصميم للهواتف (أقل من 768px) */
+/* تحسين عرض الهواتف */
 @media (max-width: 768px) {
+    /* تعديل عام */
+    body {
+        font-size: 14px;
+    }
+
     /* تعديلات على القسم الأول */
+    #section1 {
+        padding: 20px;
+        text-align: center;
+    }
+
     #section1 h1 {
         font-size: 2em;
     }
+
     #section1 p {
         font-size: 1em;
     }
@@ -169,11 +180,16 @@ body {
         flex-direction: column;
         padding: 20px;
         text-align: center;
+        justify-content: center;
+        align-items: center;
     }
+
     #section2 .part1 img {
-        max-width: 80%;
+        max-width: 90%;
+        height: auto;
         margin-bottom: 20px;
     }
+
     #section2 .part1 .text {
         align-items: center;
         margin-right: 0;
@@ -184,20 +200,24 @@ body {
         flex-direction: column;
         padding: 20px;
         text-align: center;
+        height: auto;
     }
+
     #section2 .part2 h2 {
         margin-right: 0;
+        font-size: 1.5em;
     }
-    #section2 .part2 .additional-text {
-        position: static;
-        margin: 20px 0;
-    }
-    #section2 .part2 .logo-text {
-        position: static;
-        margin: 20px 0;
-    }
+
+    #section2 .part2 .additional-text,
+    #section2 .part2 .logo-text,
     #section2 .part2 .logo {
         position: static;
-        margin: 20px 0;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    #section2 .part2 .logo img {
+        width: 50px;
+        height: 50px;
     }
 }
