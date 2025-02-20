@@ -107,24 +107,49 @@ body {
     position: relative;
 }
 
-#section2 .part2 h2 {
+#section2 .part2 .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* عمودين */
+    grid-template-rows: auto auto; /* صفوف تلقائية */
+    gap: 10px; /* المسافة بين العناصر */
+    width: 100%;
+    max-width: 600px; /* تحديد عرض الشبكة */
+}
+
+#section2 .part2 .omg {
+    grid-column: 1 / 2; /* OMG في العمود الأول */
+    grid-row: 1 / 2; /* OMG في الصف الأول */
     font-size: 1.5em;
     margin: 0;
     color: white;
-    margin-bottom: 10px;
+    text-align: left; /* محاذاة لليسار */
 }
 
-#section2 .part2 h3 {
+#section2 .part2 .connect {
+    grid-column: 2 / 3; /* CONNECT في العمود الثاني */
+    grid-row: 1 / 2; /* CONNECT في الصف الأول */
     font-size: 1.5em;
     margin: 0;
     color: white;
-    margin-bottom: 10px;
+    text-align: right; /* محاذاة لليمين */
 }
 
-#section2 .part2 p {
+#section2 .part2 .vq1 {
+    grid-column: 2 / 3; /* vq_1 في العمود الثاني */
+    grid-row: 2 / 3; /* vq_1 في الصف الثاني */
     font-size: 1.2em;
-    margin: 5px 0;
+    margin: 0;
     color: white;
+    text-align: right; /* محاذاة لليمين */
+}
+
+#section2 .part2 .email {
+    grid-column: 2 / 3; /* otis@otis.team في العمود الثاني */
+    grid-row: 3 / 4; /* otis@otis.team في الصف الثالث */
+    font-size: 1.2em;
+    margin: 0;
+    color: white;
+    text-align: right; /* محاذاة لليمين */
 }
 
 #section2 .part2 .logo {
