@@ -24,6 +24,8 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
+    padding: 20px;
+    text-align: center;
 }
 
 #section1 h1 {
@@ -38,13 +40,15 @@ body {
 
 /* Second Section (Two Parts: Black and Dim Black) */
 #section2 {
-    top: 100vh; /* Start below the first section */
+    transform: translateY(100%);
+    transition: transform 1.2s ease-in-out;
+    position: absolute;
+    width: 100%;
     height: 150vh; /* Combined height of both parts */
-    transition: top 1.2s ease-in-out; /* Smooth scrolling effect */
 }
 
 #section2.active {
-    top: 0; /* Move to the top when active */
+    transform: translateY(0);
 }
 
 /* First Part of Section 2 (Black Background) */
@@ -100,7 +104,6 @@ body {
     font-size: 1.5em;
     margin: 0;
     color: white;
-    margin-right: 280px;
 }
 
 #section2 .part2 .additional-text {
@@ -156,46 +159,26 @@ body {
 
 /* تحسين عرض الهواتف */
 @media (max-width: 768px) {
-    /* تعديل عام */
-    body {
-        font-size: 14px;
-    }
-
-    /* تعديلات على القسم الأول */
-    #section1 {
-        padding: 20px;
-        text-align: center;
-    }
-
-    #section1 h1 {
-        font-size: 2em;
-    }
-
-    #section1 p {
-        font-size: 1em;
-    }
-
-    /* تعديلات على القسم الثاني - الجزء الأول */
     #section2 .part1 {
-        flex-direction: column;
-        padding: 20px;
-        text-align: center;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        padding: 20px;
     }
 
     #section2 .part1 img {
-        max-width: 90%;
+        max-width: 45%;
         height: auto;
-        margin-bottom: 20px;
+        border-radius: 10px;
     }
 
     #section2 .part1 .text {
-        align-items: center;
-        margin-right: 0;
+        max-width: 50%;
+        text-align: left;
+        margin-left: 10px;
     }
 
-    /* تعديلات على القسم الثاني - الجزء الثاني */
     #section2 .part2 {
         flex-direction: column;
         padding: 20px;
