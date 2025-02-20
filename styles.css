@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 /* General Section Styles */
@@ -12,17 +13,19 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* First Section (Custom Background Image) */
+/* First Section (Background Image) */
 #section1 {
     height: 100vh;
     background: url('https://raw.githubusercontent.com/cinoxdz/main/main/images/background.jpg') no-repeat center center/cover;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: fixed; /* 🔥 يجعل الخلفية ثابتة عند الصعود */
-    width: 100%;
-    z-index: -1; /* 🔥 يجعلها تحت باقي العناصر */
+    transition: opacity 1s ease-in-out; /* 🔥 تأثير سلس عند الصعود */
 }
 
 #section1 h1 {
@@ -35,20 +38,26 @@ body {
     margin-top: 10px;
 }
 
-/* Second Section (Black and Dim Black Parts) */
+/* إخفاء الخلفية عند الصعود */
+#section2.active ~ #section1 {
+    opacity: 0;
+}
+
+/* Second Section */
 #section2 {
     position: relative;
-    top: 100vh; /* 🔥 يبدأ بعد القسم الأول */
-    height: 150vh; /* إجمالي ارتفاع القسمين */
+    top: 100vh;
+    height: 150vh;
     background: black;
     transition: transform 1.2s ease-in-out;
+    z-index: 2;
 }
 
 #section2.active {
-    transform: translateY(-100vh); /* 🔥 يتحرك للأعلى عند التفعيل */
+    transform: translateY(-100vh);
 }
 
-/* First Part of Section 2 (Black Background) */
+/* First Part of Section 2 */
 #section2 .part1 {
     height: 100vh;
     background-color: black;
@@ -76,15 +85,17 @@ body {
     font-size: 2em;
     margin: 0;
     font-weight: bold;
+    color: white;
 }
 
 #section2 .part1 p {
     font-size: 1.2em;
     margin-top: 10px;
     line-height: 1.5;
+    color: white;
 }
 
-/* Second Part of Section 2 (Dim Black Background Below Black) */
+/* Second Part of Section 2 */
 #section2 .part2 {
     height: 50vh;
     background-color: #111;
@@ -92,29 +103,36 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    position: relative;
 }
 
 #section2 .part2 h2 {
     font-size: 1.5em;
     margin: 0;
+    color: white;
     margin-right: 280px;
+}
+
+#section2 .part2 .additional-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 20px;
+}
+
+#section2 .part2 .logo {
+    cursor: pointer;
+}
+
+#section2 .part2 .logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* تحسين عرض الهواتف */
 @media (max-width: 768px) {
-    #section1 {
-        padding: 20px;
-        text-align: center;
-    }
-
-    #section1 h1 {
-        font-size: 2em;
-    }
-
-    #section1 p {
-        font-size: 1em;
-    }
-
     #section2 .part1 {
         flex-direction: column;
         padding: 20px;
@@ -124,14 +142,12 @@ body {
     }
 
     #section2 .part1 img {
-        max-width: 70%;
+        max-width: 90%;
         height: auto;
         margin-bottom: 20px;
     }
 
     #section2 .part1 .text {
-        max-width: 90%;
-        text-align: center;
         align-items: center;
         margin-right: 0;
     }
@@ -142,13 +158,14 @@ body {
         text-align: center;
         height: auto;
     }
-}
 
-/* دعم العرض في شاشات الكمبيوتر */
-@media (min-width: 769px) {
-    #section2 .part1 {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+    #section2 .part2 h2 {
+        margin-right: 0;
+        font-size: 1.5em;
+    }
+
+    #section2 .part2 .logo img {
+        width: 50px;
+        height: 50px;
     }
 }
